@@ -1,4 +1,4 @@
-# Server-Notion-Dictionary-API
+# Server-Notion-API
 
 ## Description
 A webapp that seeks to automate some of the manual facets of creating a new Notion database. It uses Notion's new API, SDK and an open dictionary API to fetch definitions & synonyms of words and posts them to a notion vocabulary db.
