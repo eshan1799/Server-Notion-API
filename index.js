@@ -6,10 +6,10 @@ const cors = require('cors')
 const { Client } = require("@notionhq/client");
 
 const server = express ()
-const port = 5000
+const port = process.env.PORT || 5000
 
+server.use(express.json())
 server.use(cors())
-server.use(express.json());
 
 server.post('/', function (req, res) {
     const data = req.body
