@@ -11,7 +11,12 @@ const port = process.env.PORT || 5000
 server.use(express.json())
 server.use(cors())
 
-server.post('/', function (req, res) {
+const corsOptions = {
+    origin: 'https://notion-api-sdk.herokuapp.com/',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+server.post('/', cors(corsOptions), function (req, res) {
     const data = req.body
     const newPageRes = createNewPage(data.postWord, data.postDefinition, data.postSynonyms)
     res.send(newPageRes);
