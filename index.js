@@ -6,7 +6,7 @@ const cors = require('cors')
 const { Client } = require("@notionhq/client");
 
 const server = express ()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 server.use(express.json())
 server.use(cors())
@@ -46,7 +46,7 @@ async function createNewPage(word, definition, synonyms) {
             Definition: {
                 rich_text: [{
                     text: {
-                        content: definition
+                        content: definition,
                     }
                 }]
             },
@@ -62,4 +62,4 @@ async function createNewPage(word, definition, synonyms) {
     return response;
 };
 
-server.listen(port, () => console.log(`Express departing now from http://localhost:${port}!`))
+server.listen(port, () => console.log(`Express departing now from port: ${port}!`))
